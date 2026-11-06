@@ -1,0 +1,185 @@
+/* Temel Ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.portal-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sol Menü (Sidebar) */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 24px 20px;
+    background-color: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 15px 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.sidebar-nav li a.active {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Sağ İçerik Alanı */
+.content-area {
+    flex: 1;
+    padding: 40px;
+}
+
+.doc-section {
+    display: none;
+}
+
+.doc-section.active {
+    display: block;
+}
+
+.doc-section h1 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.section-desc {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Kart Tasarımı */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.excel-color { background-color: #dcfce7; color: #16a34a; }
+.word-color { background-color: #dbeafe; color: #2563eb; }
+.ppt-color { background-color: #ffedd5; color: #ea580c; }
+
+.card-content h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Buton Tasarımları */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-excel {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-excel:hover {
+    background-color: #059669;
+}
+
+.btn-disabled {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+/*ek buton stilleri*/
+/* Buton Grubu ve Yeni Buton Stilleri */
+.btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-download:hover {
+    background-color: #059669;
+}
+
+.btn-github {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.btn-github:hover {
+    background-color: #1e293b;
+}

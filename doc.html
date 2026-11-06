@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AÖF Eğitim Portalı - Dokümanlar</title>
+    <!-- Klasör yapınıza uygun CSS yolu -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- İsteğe bağlı FontAwesome ikonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="portal-container">
+        <!-- Sol Navigasyon Menüsü -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>AÖF Eğitim Portalı</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#excel" class="nav-link active"><i class="fa-regular fa-file-excel"></i> Excel Dokümanları</a></li>
+                    <li><a href="#word" class="nav-link"><i class="fa-regular fa-file-word"></i> Word Dokümanları</a></li>
+                    <li><a href="#powerpoint" class="nav-link"><i class="fa-regular fa-file-powerpoint"></i> PowerPoint Dokümanları</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Ana İçerik Alanı -->
+        <main class="content-area">
+            
+            <!-- Excel Bölümü -->
+            <section id="excel" class="doc-section active">
+                <h1>Excel Çalışmaları</h1>
+                <p class="section-desc">Yapay zekâ ve veri analizi derslerine ait Excel laboratuvar ve uygulama dosyaları.</p>
+                
+                <div class="card">
+                    <div class="card-icon excel-color">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Yapay Zeka İçin Matematik Laboratuvarı - Vektör Çalışması</h3>
+                        <p>Bu çalışma kitabı, Yapay Zekâ matematiğinde kullanılan temel vektör işlemleri, matris hesabı ve veri analizi örneklerini içerir.</p>
+                        
+                        <!-- İki Butonlu Yapı -->
+                        <div class="btn-group">
+                            <!-- Doğrudan İndirme Bağlantısı (Raw) -->
+                            <a href="https://raw.githubusercontent.com/cgokmen-data/aof_egitim_portali/main/veri/yapay_zeka_icin_matematik_loboratuvari_vektor.xlsx" 
+                               class="btn btn-download">
+                               <i class="fa-solid fa-download"></i> Dosyayı İndir
+                            </a>
+
+                            <!-- GitHub'da Görüntüle Bağlantısı -->
+                            <a href="https://github.com/cgokmen-data/aof_egitim_portali/blob/main/veri/yapay_zeka_icin_matematik_loboratuvari_vektor.xlsx" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn btn-github">
+                               <i class="fa-brands fa-github"></i> GitHub'da İncele
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Word Bölümü -->
+            <section id="word" class="doc-section">
+                <h1>Word Dokümanları</h1>
+                <p class="section-desc">Ders notları, ödevler ve akademik şablonlar.</p>
+                
+                <div class="card">
+                    <div class="card-icon word-color">
+                        <i class="fa-regular fa-file-word"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ders Çalışma Notları ve Özetler</h3>
+                        <p>Henüz bu kategoriye eklenmiş doküman bulunmamaktadır.</p>
+                        <a href="#" class="btn btn-disabled" tabindex="-1">Bağlantı Yakında</a>
+                    </div>
+                </div>
+            </section>
+            <!-- PowerPoint Bölümü -->
+            <section id="powerpoint" class="doc-section">
+                <h1>PowerPoint Sunumları</h1>
+                <p class="section-desc">Ders ve proje sunum slaytları.</p>
+                
+                <div class="card">
+                    <div class="card-icon ppt-color">
+                        <i class="fa-regular fa-file-powerpoint"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Haftalık Proje Sunumları</h3>
+                        <p>Henüz bu kategoriye eklenmiş sunum dosyası bulunmamaktadır.</p>
+                        <a href="#" class="btn btn-disabled" tabindex="-1">Bağlantı Yakında</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Menü Geçişleri İçin Basit JavaScript -->
+    <script>
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Aktif menü sınıfını değiştir
+                document.querySelectorAll('.sidebar-nav a').forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+
+                // İlgili bölümü göster, diğerlerini gizle
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.doc-section').forEach(section => {
+                    if(section.id === targetId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
